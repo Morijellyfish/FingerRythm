@@ -14,12 +14,10 @@ public class NoteMain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0, 0.1f, 0);
+        transform.Translate(0, 2*Time.deltaTime, 0);
         if (transform.localPosition.y >= 0.4f)
         {
-            missEff.transform.position = this.transform.position;
-            missEff.transform.rotation = this.transform.rotation;
-            Instantiate(missEff);
+            Instantiate(missEff,transform.position,transform.rotation);
             Destroy(this.gameObject);
             Debug.Log("miss");
         }

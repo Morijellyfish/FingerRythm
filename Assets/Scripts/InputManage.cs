@@ -9,6 +9,7 @@ public class InputManage : MonoBehaviour
     Color NormalColor=new Color(1,1,1,0.5f);
     [SerializeField] KeyCode key;
     [SerializeField] GameObject Line;
+    [SerializeField] GameObject HitEff;
 
     // Update is called once per frame
     void Update()
@@ -23,14 +24,16 @@ public class InputManage : MonoBehaviour
                 var i = Math.Abs(obj.transform.localPosition.y);
                 if (i <= 0.2)
                 {
-                    Debug.Log("Pure");
+                    Debug.Log("Good");
                     Score.score += 2;
                     Destroy(obj);
+                    Instantiate(HitEff, transform.position, transform.rotation);
                 }else if (i < 0.4)
                 {
-                    Debug.Log("Far");
+                    Debug.Log("Bad");
                     Score.score += 1;
                     Destroy(obj);
+                    Instantiate(HitEff, transform.position, transform.rotation);
                 }
 
                 
