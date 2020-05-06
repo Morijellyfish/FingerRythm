@@ -14,7 +14,7 @@ public class NoteMain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(0, 2*Time.deltaTime, 0);
+        transform.Translate(0, 2*Time.deltaTime, 0);// 2m/s
         if (transform.localPosition.y >= 0.4f)
         {
             Instantiate(missEff,transform.position,transform.rotation);
