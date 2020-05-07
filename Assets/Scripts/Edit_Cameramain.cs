@@ -35,8 +35,11 @@ public class Edit_Cameramain : MonoBehaviour
             }
             else
             {
-                AudioSource.time = transform.position.x / 6* (60.0f / BPM);
-                AudioSource.Play();
+                if (transform.position.x >= 0)
+                {
+                    AudioSource.time = transform.position.x / 6 * (60.0f / BPM);
+                    AudioSource.Play();
+                }
                 playing = true;
             }
         }
@@ -44,6 +47,11 @@ public class Edit_Cameramain : MonoBehaviour
         if (playing) {
             //6を掛けるのは1拍を６等分してノーツを置けるようにしているため
             transform.Translate(Time.deltaTime*6/(60.0f / BPM), 0, 0);
+            if (!AudioSource.isPlaying&&transform.position.x>=0)
+            {
+                AudioSource.time = transform.position.x / 6 * (60.0f / BPM);
+                AudioSource.Play();
+            }
         }
         else
         {
