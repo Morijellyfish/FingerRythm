@@ -6,7 +6,7 @@ public class Edit_Cameramain : MonoBehaviour
 {
     [SerializeField] GameObject Lines;
     [SerializeField] GameObject Notes;
-    [SerializeField] int BPM;
+    public static int BPM=92;
     bool playing;
     AudioSource AudioSource;
     // Start is called before the first frame update
@@ -14,9 +14,9 @@ public class Edit_Cameramain : MonoBehaviour
     {
         AudioSource = Notes.GetComponent<AudioSource>();
         AudioSource.time = 0;
-        playing = true;
+        playing = false;
         
-        for(int i = 0; i < BPM; i++)
+        for(int i = 0; i < BPM*(AudioSource.clip.length/60); i++)
         {
             Lines.transform.position = new Vector2(i * 6, Lines.transform.position.y);
             Instantiate(Lines);

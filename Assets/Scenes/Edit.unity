@@ -431,7 +431,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Lines: {fileID: 3641421141204617200, guid: cd53708dc799a9a4398ba93dbd0aedd9, type: 3}
   Notes: {fileID: 2085188036}
-  BPM: 92
 --- !u!114 &534669907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,6 +443,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a655160a0fcb3e43bf7812456f108a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  noteMarker: {fileID: 4271019578351841194, guid: ccb6e253620f8664f8f958ee185fd61b,
+    type: 3}
 --- !u!1 &682275885
 GameObject:
   m_ObjectHideFlags: 0
@@ -1457,6 +1458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2085188037}
   - component: {fileID: 2085188038}
+  - component: {fileID: 2085188039}
   m_Layer: 0
   m_Name: Notes
   m_TagString: Untagged
@@ -1493,7 +1495,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f6ca9878f73130d4fa117e6b0cbccdad, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1578,6 +1580,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2085188039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085188036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30a287acea12b424bb7dd226489487a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2086826676
 GameObject:
   m_ObjectHideFlags: 0
