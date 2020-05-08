@@ -34,6 +34,34 @@ public class Edit_MarkerSet : MonoBehaviour
                 }
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            var data = Edit_useFile.ReadFile();
+            Edit_HumenData.humen = data;
+            foreach(var obj in GameObject.FindGameObjectsWithTag("Marker"))
+            {
+                Destroy(obj);
+            }
+            int x = 0;
+            foreach (int data_i in data)
+            {
+                if (data_i != 0)
+                {
+                    for (int i = 0; i < 4; i++)
+                    {
+                        if (Check(data_i, (int)Math.Pow(2, i))){
+                            noteMarker.transform.position = new Vector3(x, -i, 0);
+                            noteMarker.transform.rotation = Quaternion.Euler(0, 0, 180 + 90 * -i);
+                            Instantiate(noteMarker);
+                        }
+                    }
+                }
+                x++;
+            }
+
+        }
+
     }
     bool Check(int a,int b)
     {
