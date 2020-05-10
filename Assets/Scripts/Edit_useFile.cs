@@ -47,7 +47,6 @@ public class Edit_useFile : MonoBehaviour
             }
             i++;
         }
-        Debug.Log(ans[1]);
         return ans;
     }
 }
