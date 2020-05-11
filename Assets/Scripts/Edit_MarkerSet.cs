@@ -32,6 +32,18 @@ public class Edit_MarkerSet : MonoBehaviour
                     Edit_HumenData.humen[(int)mousePos.x] += (int)Math.Pow(2, (int)Math.Abs(mousePos.y));
                     Debug.Log(Edit_HumenData.humen[(int)mousePos.x]);
                 }
+                else
+                {
+                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    RaycastHit2D hit = Physics2D.Raycast((Vector2)ray.origin, (Vector2)ray.direction);
+
+                    if (hit)
+                    {
+                        Destroy(hit.transform.gameObject);
+                        Edit_HumenData.humen[(int)mousePos.x] -= (int)Math.Pow(2, (int)Math.Abs(mousePos.y));
+                    }
+
+                }
             }
         }
 
@@ -55,6 +67,7 @@ public class Edit_MarkerSet : MonoBehaviour
                             noteMarker.transform.rotation = Quaternion.Euler(0, 0, 180 + 90 * -i);
                             Instantiate(noteMarker);
                         }
+                        
                     }
                 }
                 x++;
